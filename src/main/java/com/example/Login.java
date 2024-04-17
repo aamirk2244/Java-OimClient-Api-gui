@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.interfaces.UserSession;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,11 +24,11 @@ import javax.security.auth.login.LoginException;
 
 import oracle.iam.platform.OIMClient;
 
-public class Login {
+public class Login implements UserSession{
 
-    private static OIMClient oimClient;
-
-    public static OIMClient createSession(String username, char[] password) throws LoginException {
+    private OIMClient oimClient;
+    
+    public Login() throws LoginException{
         System.out.println("Creating client....-------------------------------------");
         String ctxFactory = "weblogic.jndi.WLInitialContextFactory";
         String serverURL = "t3://10.2.2.97:14000/";
@@ -36,17 +38,23 @@ public class Login {
         System.setProperty("java.security.auth.login.config", "/home/aamir/aamir-drive/oimClient/conf/authwl.conf");
         System.setProperty("APPSERVER_TYPE", "wls");
             //  System.setProperty("weblogic.security.SSL.trustedCAKeyStore", "/home/aamir/Oracle/Middleware/Oracle_Home/wlserver/server/lib/DemoTrust.jks"); // Provide if using SSL
-
             
         oimClient = new OIMClient(env);
         System.out.println("Logging in");               
-        oimClient.login(username, "welcome1".toCharArray());
+        oimClient.login("xelsysadm", "welcome1".toCharArray());
         System.out.println("Log in successful");
+        this.oimClient = oimClient;
+    }
+    
+    @Override
+    public OIMClient getSession() {
         return oimClient;
     }
     
-    public static OIMClient getSession() {
-        return oimClient;
+    @Override
+    public void destroySession() {
+        oimClient.logout();
+        System.out.println("Log out successful");
     }
 
 

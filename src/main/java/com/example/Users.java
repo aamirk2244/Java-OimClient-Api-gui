@@ -65,9 +65,8 @@ import oracle.iam.platform.entitymgr.vo.SearchCriteria;
 
 public class Users {
     private OIMClient oimClient;
-    public Users() throws Exception{
-        super();
-        oimClient =  Login.createSession("xelsysadm", "welcome1".toCharArray());
+    public Users(OIMClient oimClient) throws Exception{
+        this.oimClient = oimClient;
     }
     
     public void create(HashMap<String, Object> userAttributes)throws Exception {

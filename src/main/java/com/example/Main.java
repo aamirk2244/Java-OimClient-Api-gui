@@ -13,18 +13,17 @@ import oracle.iam.identity.usermgmt.vo.User;
 import oracle.iam.identity.usermgmt.vo.UserManagerResult;
 import oracle.iam.platform.OIMClient;
 import com.example.*;
-import com.example.gui.Dashboard;
-import com.example.gui.components.PopupBox;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        OIMClient oimClient = Login.createSession("xelsysadm", "welcome1".toCharArray());
+        Login login = new Login();
+        OIMClient oimClient = login.getSession();
         System.out.println(oimClient);
 //        InputTest field = new InputTest();
 //        Dashboard guiMain = new Dashboard();
-          new UserModifications().passwordReset("12003");  
+//          new UserModifications(oimClient).passwordReset("12003");  
 //        Users user = new Users();
 //        user.findBy("User Login", "M*"); // Wildcard search for users starting with "M"
 //            user.getUserLogin("mo*");
@@ -47,7 +46,7 @@ public class Main {
 //        
 //        user.create(createAttributes);  // Uncomment to create a new user (requires appropriate permissions)
 
-        oimClient.logout();
+        login.destroySession();
 //        System.exit(0);
     }
 }
