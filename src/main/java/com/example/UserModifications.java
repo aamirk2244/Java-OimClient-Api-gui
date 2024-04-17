@@ -16,15 +16,11 @@ public class UserModifications {
         this.oimClient = oimClient;
     }
     
-    public void passwordReset(String userKey) {
+    public void passwordReset(String userKey, String newPassword) {
 
         // Establish a connection to the OIM client (assuming appropriate setup)
         UserManager usrMgr = oimClient.getService(UserManager.class);
 
-        // Generate a random, secure password (replace with your preferred method)
-        String newPassword = generateSecurePassword();
-
-        // Convert user key to String (assuming it's an integer value)
         
         try {
             // Attempt password reset
@@ -48,12 +44,5 @@ public class UserModifications {
         }
     }
 
-    // Generate a secure random password (replace with your implementation)
-    private String generateSecurePassword() {
-        // Use a strong password generation library (e.g., Bouncy Castle, SecureRandom)
-        // for at least 12 characters with a mix of uppercase, lowercase, numbers, and symbols
-        // ...
-        return("Welcome$1");
-    }
 
 }
