@@ -1,18 +1,8 @@
 package com.example;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Hashtable; 
+import com.example.gui.Dashboard;
 
-import javax.security.auth.login.LoginException;
-
-import javax.swing.SwingUtilities;
-
-import oracle.iam.identity.usermgmt.api.UserManager;
-import oracle.iam.identity.usermgmt.vo.User;
-import oracle.iam.identity.usermgmt.vo.UserManagerResult;
 import oracle.iam.platform.OIMClient;
-import com.example.*;
 
 public class Main {
 
@@ -21,8 +11,7 @@ public class Main {
         Login login = new Login();
         OIMClient oimClient = login.getSession();
         System.out.println(oimClient);
-//        InputTest field = new InputTest();
-//        Dashboard guiMain = new Dashboard();
+        Dashboard guiMain = new Dashboard();
 //          new UserModifications(oimClient).passwordReset("12003");  
 //        Users user = new Users();
 //        user.findBy("User Login", "M*"); // Wildcard search for users starting with "M"
