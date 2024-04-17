@@ -12,10 +12,8 @@ import oracle.iam.platform.authz.exception.AccessDeniedException;
 public class UserModifications {
     private OIMClient oimClient;
 
-    public UserModifications() throws Exception {
-        super();
-        oimClient =  Login.createSession("xelsysadm", "welcome1".toCharArray());
-
+    public UserModifications(OIMClient oimClient) throws Exception {
+        this.oimClient = oimClient;
     }
     
     public void passwordReset(String userKey) {

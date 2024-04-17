@@ -1,5 +1,6 @@
 package com.example.gui;
 
+import com.example.Login;
 import com.example.Users;
 
 import com.example.gui.components.PopupBox;
@@ -86,7 +87,7 @@ public class CreateUserScreen {
         System.out.println(userParams);
         String errorMessage  = "An error occurred while creating user: ";
         try {
-          new Users().create(userParams);
+          new Users(new Login().getSession()).create(userParams);
             PopupBox.showSuccessDialog(frame, "User Created Successfully");
         } catch (Exception e) {
           System.out.println(errorMessage +  e.getMessage());
