@@ -11,10 +11,10 @@ import java.awt.event.ActionListener;
 
 public class Dashboard extends JFrame{
     
-        private final JPanel buttonPanel; // Panel for user choice buttons
-        private JFrame createUserFrame; // Frame for user creation
-        private JFrame passwordResetFrame; // Frame for user creation
-        
+        private final JPanel buttonPanel;
+        private JFrame createUserFrame;
+        private JFrame passwordResetFrame;
+        private JFrame findUsersFrame;
 
         public Dashboard() {
             super("OIM User Management");
@@ -22,11 +22,15 @@ public class Dashboard extends JFrame{
             JButton createButton = new JButton("Create User");
             JButton editButton = new JButton("Edit User");
             JButton passwordResetButton = new JButton("Password Reset");
+            JButton findUsersButton = new JButton("Find Users");
+
 
             buttonPanel = new JPanel();
             buttonPanel.add(createButton);
             buttonPanel.add(editButton);
             buttonPanel.add(passwordResetButton);
+            buttonPanel.add(findUsersButton);
+
 
             createButton.addActionListener(new ActionListener() {
                 @Override
@@ -46,6 +50,14 @@ public class Dashboard extends JFrame{
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     System.out.println("Edit User functionality not yet implemented.");
+                }
+            });
+
+
+            findUsersButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    showFindUsersScreen();
                 }
             });
 
@@ -69,6 +81,13 @@ public class Dashboard extends JFrame{
 
             passwordResetFrame = new PasswordResetScreen().create();
             passwordResetFrame.setVisible(true);
+        }
+
+        private void showFindUsersScreen() {
+            handleDispose(findUsersFrame);
+
+            findUsersFrame = new FindUsersScreen().create();
+            findUsersFrame.setVisible(true);
         }
         
         private void handleDispose(JFrame frame) {
