@@ -31,7 +31,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value=""/>
+          <text value="First Name"/>
           <toolTipText value="Column name in the OIM User Table i.e  First Name, Last Name, User Login etc"/>
         </properties>
       </component>
@@ -42,7 +42,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value=""/>
+          <text value="A*"/>
           <toolTipText value="examples are  Aamir. Also supports wildcard like Aam*"/>
         </properties>
       </component>

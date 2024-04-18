@@ -2,15 +2,13 @@ package com.example;
 
 import com.example.gui.Dashboard;
 
-import oracle.iam.platform.OIMClient;
-
 public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        Login login = new Login();
-        OIMClient oimClient = login.getSession();
-        System.out.println(oimClient);
+//        Login login = new Login();
+//        OIMClient oimClient = login.getSession();
+//        System.out.println(oimClient);
         Dashboard guiMain = new Dashboard();
 //          new UserModifications(oimClient).passwordReset("12003");  
 //        Users user = new Users();
@@ -34,7 +32,7 @@ public class Main {
 //        createAttributes.put("Role", "Full-Time");
 //        
 //        user.create(createAttributes);  // Uncomment to create a new user (requires appropriate permissions)
-        login.destroySession();
+//        login.destroySession();
 //        System.exit(0);
     }
 }
