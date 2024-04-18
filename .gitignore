@@ -1,0 +1,8 @@
+# Compiled class files
+target/
+/target/
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.iws

@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74df0439-1678-41e0-9fbf-e8efbe53ea7b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/UserModifications.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Users.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/CreateUserScreen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/CreateUserScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/Dashboard$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/Dashboard$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/Dashboard$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/Dashboard$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/Dashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/FindUsersScreen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/FindUsersScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/PasswordResetScreen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/PasswordResetScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/components/PopupBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/interfaces/UserSession.class" beforeDir="false" />
-    </list>
+    <list default="true" id="74df0439-1678-41e0-9fbf-e8efbe53ea7b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
