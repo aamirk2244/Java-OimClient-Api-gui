@@ -1,67 +1,20 @@
 package com.example;
 
-import java.io.IOException;
-
-import java.util.HashMap;
-import java.util.Hashtable;
-
-import javax.security.auth.login.LoginException;
-
+import Thor.API.Exceptions.tcAPIException;
+import Thor.API.Exceptions.tcColumnNotFoundException;
+import Thor.API.Exceptions.tcOrganizationNotFoundException;
+import Thor.API.Operations.tcOrganizationOperationsIntf;
+import Thor.API.tcResultSet;
+import oracle.iam.identity.exception.UserSearchException;
 import oracle.iam.identity.usermgmt.api.UserManager;
+import oracle.iam.identity.usermgmt.api.UserManagerConstants.AttributeName;
 import oracle.iam.identity.usermgmt.vo.User;
 import oracle.iam.identity.usermgmt.vo.UserManagerResult;
 import oracle.iam.platform.OIMClient;
-
-
-import oracle.iam.platform.OIMClient;
-import Thor.API.tcResultSet;
-
-import java.util.HashSet;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Hashtable;
-
-import java.util.List;
-import java.util.Set;
-
-import oracle.iam.platform.OIMClient;
-import oracle.iam.identity.usermgmt.api.UserManager;
-import oracle.iam.platform.entitymgr.vo.SearchCriteria;
-import oracle.iam.identity.usermgmt.vo.User;
-import java.util.*;
-// Role related API's
-import oracle.iam.identity.rolemgmt.api.RoleManager;
-import oracle.iam.identity.rolemgmt.vo.Role;
-import oracle.iam.identity.exception.RoleSearchException;
-import oracle.iam.identity.rolemgmt.api.RoleManagerConstants.RoleAttributeName;
-import oracle.iam.identity.rolemgmt.api.RoleManagerConstants.RoleCategoryAttributeName;
- 
-// User related API's
-import oracle.iam.identity.usermgmt.api.UserManager;
-import oracle.iam.identity.usermgmt.vo.User;
-import oracle.iam.identity.exception.UserSearchException;
-import oracle.iam.identity.usermgmt.api.UserManagerConstants.AttributeName;
- 
-// Organization Legacy API's
-import Thor.API.Operations.tcOrganizationOperationsIntf;
-import Thor.API.tcResultSet;
-import Thor.API.Exceptions.tcAPIException; 
-import Thor.API.Exceptions.tcColumnNotFoundException; 
-import Thor.API.Exceptions.tcOrganizationNotFoundException; 
-
-import oracle.iam.platform.OIMClient;
 import oracle.iam.platform.authz.exception.AccessDeniedException;
 import oracle.iam.platform.entitymgr.vo.SearchCriteria;
- 
+
 import java.util.*;
- 
-import javax.naming.NamingException;
-import javax.security.auth.login.LoginException;
- 
-
-
-
-import oracle.iam.platform.entitymgr.vo.SearchCriteria;
 
 public class Users {
     private OIMClient oimClient;
@@ -70,8 +23,8 @@ public class Users {
     }
     
     public void create(HashMap<String, Object> userAttributes)throws Exception {
-        
 
+        System.out.println("good");
 //        createAttributes.put("User Login", "H11User");
 //        createAttributes.put("First Name", "H11 FIRST");
 //        createAttributes.put("Last Name","H11 LAST");
@@ -89,10 +42,11 @@ public class Users {
       
 
 //        userResult = usrMgr.create(new User(null,user_params()));
+        System.out.println("fine...");
         userResult = usrMgr.create(new User(null, userAttributes));
+        System.out.println("userresult is " + userResult);
         userKey = userResult.getEntityId();
         System.out.println("Created user with key = " + userKey);
-        
     }
     
     public List getUserLogin(String psFirstName) {
