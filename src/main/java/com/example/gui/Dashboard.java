@@ -1,15 +1,10 @@
 package com.example.gui;
 
-import com.example.Users;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
-import javax.swing.*;
 import java.awt.*;
-import java.util.HashMap;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -33,18 +28,17 @@ public class Dashboard extends JFrame{
             buttonPanel.add(editButton);
             buttonPanel.add(passwordResetButton);
 
-            // Add action listeners to handle button clicks
             createButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    showCreateScreen(); // Open create user screen
+                    showCreateScreen();
                 }
             });
             
             passwordResetButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    showPasswordResetScreen(); // Open create user screen
+                    showPasswordResetScreen();
                 }
             });
 
@@ -55,17 +49,13 @@ public class Dashboard extends JFrame{
                 }
             });
 
-            // Add button panel to this frame
             getContentPane().add(buttonPanel, BorderLayout.CENTER);
 
-            setPreferredSize(new Dimension(400, 100)); // Set preferred size for button screen
+            setPreferredSize(new Dimension(400, 100));
             pack();
             setLocationRelativeTo(null); // Center the button screen
             setVisible(true);
-
-            // Create the screen for user creation (initially hidden)
         }
-
 
         private void showCreateScreen() {
             handleDispose(createUserFrame);
@@ -77,7 +67,7 @@ public class Dashboard extends JFrame{
         private void showPasswordResetScreen() {
             handleDispose(passwordResetFrame);
 
-            passwordResetFrame = new PasswordResetScreen().create();            
+            passwordResetFrame = new PasswordResetScreen().create();
             passwordResetFrame.setVisible(true);
         }
         
@@ -86,7 +76,4 @@ public class Dashboard extends JFrame{
                 frame.dispose();
             }
         }
-    
-      
-
 }

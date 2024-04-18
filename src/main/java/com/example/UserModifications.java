@@ -2,7 +2,6 @@ package com.example;
 
 import oracle.iam.identity.usermgmt.api.UserManager;
 import oracle.iam.platform.OIMClient;
-import javax.security.auth.login.LoginException;
 import oracle.iam.identity.exception.UserModifyException;
 import oracle.iam.identity.exception.ValidationFailedException;
 import oracle.iam.identity.exception.NoSuchUserException;
@@ -16,16 +15,14 @@ public class UserModifications {
         this.oimClient = oimClient;
     }
     
-    public void passwordReset(String userKey, String newPassword) {
+    public boolean passwordReset(String userKey, String newPassword) {
 
-        // Establish a connection to the OIM client (assuming appropriate setup)
         UserManager usrMgr = oimClient.getService(UserManager.class);
-
         
         try {
-            // Attempt password reset
             usrMgr.changePassword(userKey, newPassword.toCharArray(), false, false);
             System.out.println("\nPassword reset successfully for user: " + userKey + "\n");
+            return true;
         } catch (ValidationFailedException e) {
             System.err.println("Password reset failed due to validation errors:");
             e.printStackTrace();
@@ -42,7 +39,6 @@ public class UserModifications {
             System.err.println("An unexpected error occurred with the UserManager:");
             e.printStackTrace();
         }
+        return false;
     }
-
-
 }
