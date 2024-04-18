@@ -37,7 +37,7 @@ public class Login implements UserSession{
         env.put(OIMClient.JAVA_NAMING_PROVIDER_URL, serverURL);
         System.setProperty("java.security.auth.login.config", "/home/aamir/aamir-drive/oimClient/conf/authwl.conf");
         System.setProperty("APPSERVER_TYPE", "wls");
-            //  System.setProperty("weblogic.security.SSL.trustedCAKeyStore", "/home/aamir/Oracle/Middleware/Oracle_Home/wlserver/server/lib/DemoTrust.jks"); // Provide if using SSL
+        //  System.setProperty("weblogic.security.SSL.trustedCAKeyStore", "/home/aamir/Oracle/Middleware/Oracle_Home/wlserver/server/lib/DemoTrust.jks"); // Provide if using SSL
             
         oimClient = new OIMClient(env);
         System.out.println("Logging in");               
