@@ -18,11 +18,7 @@ public class PasswordResetScreen {
     private JFrame frame = new JFrame("Password Reset");
 
     public  JFrame create() {
-
-        JLabel userKeyLabel = new JLabel("User Key:");
-        JLabel passwordLabel = new JLabel("New Password:");
-
-       submitButton.addActionListener(new ActionListener() {
+        submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 updatePassword( userKey.getText(), userPassword.getText());

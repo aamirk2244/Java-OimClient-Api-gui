@@ -34,7 +34,6 @@ public class Main {
 //        createAttributes.put("Role", "Full-Time");
 //        
 //        user.create(createAttributes);  // Uncomment to create a new user (requires appropriate permissions)
-
         login.destroySession();
 //        System.exit(0);
     }

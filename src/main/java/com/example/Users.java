@@ -176,7 +176,7 @@ public class Users {
     }
 
     
-    public void findBy(String column, String query) throws Exception {
+    public List<User> findBy(String column, String query) throws Exception {
            
            UserManager usrMgr = oimClient.getService(UserManager.class);
 
@@ -185,6 +185,7 @@ public class Users {
 
            List<User> users = usrMgr.search(criteria, retColumns(), null);
            System.out.println(users);
+           return users;
        }
     
     public void findByUserLogin(String query) throws Exception {
