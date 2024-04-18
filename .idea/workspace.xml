@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74df0439-1678-41e0-9fbf-e8efbe53ea7b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gui/FindUsersScreen.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gui/FindUsersScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gui/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gui/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gui/PasswordResetScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gui/PasswordResetScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/UserModifications.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/UserModifications.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/CreateUserScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gui/CreateUserScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gui/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/PasswordReset.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/PasswordResetScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gui/PasswordResetScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/components/PopupBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gui/components/PopupBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/components/package-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gui/package-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/interfaces/UserSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/interfaces/UserSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/interfaces/package-info.class" beforeDir="false" />
-    </list>
+    <list default="true" id="74df0439-1678-41e0-9fbf-e8efbe53ea7b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,19 +48,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/aamir/aamir-drive/java-oim-api",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/aamir/aamir-drive/java-oim-api&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
