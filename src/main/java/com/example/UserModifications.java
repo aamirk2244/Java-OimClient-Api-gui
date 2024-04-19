@@ -11,14 +11,13 @@ import oracle.iam.platform.authz.exception.AccessDeniedException;
 public class UserModifications {
     private OIMClient oimClient;
 
-    public UserModifications(OIMClient oimClient) throws Exception {
+    public UserModifications(OIMClient oimClient) {
         this.oimClient = oimClient;
     }
     
     public boolean passwordReset(String userKey, String newPassword) {
 
         UserManager usrMgr = oimClient.getService(UserManager.class);
-        
         try {
             usrMgr.changePassword(userKey, newPassword.toCharArray(), false, false);
             System.out.println("\nPassword reset successfully for user: " + userKey + "\n");
@@ -39,6 +38,7 @@ public class UserModifications {
             System.err.println("An unexpected error occurred with the UserManager:");
             e.printStackTrace();
         }
+
         return false;
     }
 }

@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Optional;
 
 public class FindUsersScreen {
     private JTextField columnNameTextField;
@@ -41,8 +42,14 @@ public class FindUsersScreen {
     private void findUsers(String column, String query) {
         try {
             Users user = new Users(new Login().getSession());
-            List<User> users = user.findBy(column, query);
-            resultTextArea.setText(users.toString());
+            Optional<List<User>>  users = user.findBy(column, query);
+
+            if(users.isPresent()) {
+                System.out.println(users);
+                resultTextArea.setText(users.toString());
+                return;
+            }
+            resultTextArea.setText("No User Found");
 
         } catch (Exception e) {
             throw new RuntimeException(e);

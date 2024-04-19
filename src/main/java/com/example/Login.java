@@ -45,6 +45,14 @@ public class Login implements UserSession{
         System.out.println("Log in successful");
         this.oimClient = oimClient;
     }
+
+    public static OIMClient crateSession() {
+        try{
+            return new Login().getSession();
+        }catch (LoginException e){
+            throw new RuntimeException("Failed to login", e);
+        }
+    }
     
     @Override
     public OIMClient getSession() {
