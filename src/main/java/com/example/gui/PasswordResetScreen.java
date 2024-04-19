@@ -10,9 +10,6 @@ import oracle.iam.platform.OIMClient;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 public class PasswordResetScreen {
     private OIMClient oimClient;
@@ -42,7 +39,7 @@ public class PasswordResetScreen {
     }
 
     private String getUserKeyByUserLogin(String userLogin) {
-        oimClient = Login.crateSession();
+        oimClient = Login.createSession();
         Users users=  new Users(oimClient);
         User oimUser =  users.findByUserLogin(userLogin);
         if(oimUser == null)
@@ -52,7 +49,7 @@ public class PasswordResetScreen {
     }
 
     private void updatePassword(String userKey, String password) {
-           if(new UserModifications(Login.crateSession()).passwordReset(userKey, password))
+           if(new UserModifications(oimClient).passwordReset(userKey, password))
              PopupBox.showSuccessDialog(frame, "Password Updated Successfully");
            else
                PopupBox.showErrorDialog(frame, "Password Reset Error",  "Error while resetting the password, Please check the logs for details");
