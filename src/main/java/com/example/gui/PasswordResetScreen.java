@@ -2,17 +2,22 @@ package com.example.gui;
 
 import com.example.Login;
 import com.example.UserModifications;
+import com.example.Users;
 import com.example.gui.components.PopupBox;
+import oracle.iam.identity.usermgmt.vo.User;
+import oracle.iam.platform.OIMClient;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PasswordResetScreen {
-    private JTextField userKey;
+    private OIMClient oimClient;
+
+    private JTextField userLogin;
     private JTextField userPassword;
     private JButton submitButton;
-    private JLabel userKeyLabel;
+    private JLabel userLoginLabel;
     private JLabel userPasswordLabel;
     private JPanel panel;
     private JFrame frame = new JFrame("Password Reset");
@@ -21,7 +26,7 @@ public class PasswordResetScreen {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                updatePassword( userKey.getText(), userPassword.getText());
+                updatePassword( getUserKeyByUserLogin( userLogin.getText()), userPassword.getText());
             }
         });
 
@@ -29,20 +34,24 @@ public class PasswordResetScreen {
         frame.setContentPane(panel);
 
         frame.setLocationRelativeTo(null); // Center the create user screen
-              
+
         return frame;
     }
 
+    private String getUserKeyByUserLogin(String userLogin) {
+        oimClient = Login.createSession();
+        Users users=  new Users(oimClient);
+        User oimUser =  users.findByUserLogin(userLogin);
+        if(oimUser == null)
+            return "";
+
+        return oimUser.getId();
+    }
+
     private void updatePassword(String userKey, String password) {
-        try {
-           if(new UserModifications(new Login().getSession()).passwordReset(userKey, password))
+           if(new UserModifications(oimClient).passwordReset(userKey, password))
              PopupBox.showSuccessDialog(frame, "Password Updated Successfully");
            else
                PopupBox.showErrorDialog(frame, "Password Reset Error",  "Error while resetting the password, Please check the logs for details");
-
-        }catch (Exception e) {
-            PopupBox.showErrorDialog(frame, "Error",  e.getMessage());
-        }
-
     }
 }

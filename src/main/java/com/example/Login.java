@@ -2,24 +2,8 @@ package com.example;
 
 import com.example.interfaces.UserSession;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.util.Base64;
 import java.util.Hashtable;
 
-import java.util.HashMap;
-import java.util.Hashtable;
-
-import javax.security.auth.login.LoginException;
-
-import oracle.iam.identity.usermgmt.api.UserManager;
-import oracle.iam.identity.usermgmt.vo.User;
-import oracle.iam.identity.usermgmt.vo.UserManagerResult;
-import oracle.iam.platform.OIMClient;
 import javax.security.auth.login.LoginException;
 
 import oracle.iam.platform.OIMClient;
@@ -44,6 +28,14 @@ public class Login implements UserSession{
         oimClient.login("xelsysadm", "welcome1".toCharArray());
         System.out.println("Log in successful");
         this.oimClient = oimClient;
+    }
+
+    public static OIMClient createSession() {
+        try{
+            return new Login().getSession();
+        }catch (LoginException e){
+            throw new RuntimeException("Failed to login", e);
+        }
     }
     
     @Override

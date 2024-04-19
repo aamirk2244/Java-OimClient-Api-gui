@@ -15,10 +15,11 @@ import oracle.iam.platform.authz.exception.AccessDeniedException;
 import oracle.iam.platform.entitymgr.vo.SearchCriteria;
 
 import java.util.*;
+import java.util.Optional;
 
 public class Users {
     private OIMClient oimClient;
-    public Users(OIMClient oimClient) throws Exception{
+    public Users(OIMClient oimClient){
         this.oimClient = oimClient;
     }
     
@@ -130,20 +131,34 @@ public class Users {
     }
 
     
-    public List<User> findBy(String column, String query) throws Exception {
-           
-           UserManager usrMgr = oimClient.getService(UserManager.class);
+    public Optional<List<User>> findBy(String column, String query) {
+           try{
+               UserManager usrMgr = oimClient.getService(UserManager.class);
 
-           SearchCriteria criteria = new SearchCriteria(column,
-        query, SearchCriteria.Operator.EQUAL);
+               SearchCriteria criteria = new SearchCriteria(column,
+                       query, SearchCriteria.Operator.EQUAL);
 
-           List<User> users = usrMgr.search(criteria, retColumns(), null);
-           System.out.println(users);
-           return users;
+               List<User> users = usrMgr.search(criteria, retColumns(), null);
+               if(users.isEmpty()) {
+                   return Optional.empty();
+               }
+
+               return Optional.of(users);
+
+           }catch (Exception e){
+               throw new RuntimeException("Failed to search for user", e);
+           }
        }
     
-    public void findByUserLogin(String query) throws Exception {
-        findBy("User Login", query);
+    public User findByUserLogin(String query) {
+
+          Optional<List<User>> oimFilteredUsers =  findBy("User Login", query);
+          if(oimFilteredUsers.isPresent()) {
+              List<User> oimUsers =  oimFilteredUsers.get();
+              return oimUsers.get(0);
+          }
+
+          return null;
     }
 
     public void findByFirstName(String query) throws Exception {
