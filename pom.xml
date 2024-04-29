@@ -87,6 +87,9 @@
         <scope>system</scope>
         <systemPath>/home/aamir/aamir-drive/java-oim-api/src/main/resources/lib/idmdf-notification-engine.jar</systemPath>
     </dependency>
+
+        <!--        below libraries are just for testing java classes, they have nothing to do with the jdbc and oim client-->
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
